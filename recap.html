@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+    <html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Classes in Python</title>
+        <style>
+/* From extension vscode.github */
+/*---------------------------------------------------------------------------------------------
+ *  Copyright (c) Microsoft Corporation. All rights reserved.
+ *  Licensed under the MIT License. See License.txt in the project root for license information.
+ *--------------------------------------------------------------------------------------------*/
+
+.vscode-dark img[src$=\#gh-light-mode-only],
+.vscode-light img[src$=\#gh-dark-mode-only] {
+	display: none;
+}
+
+</style>
+        
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/markdown.css">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/Microsoft/vscode/extensions/markdown-language-features/media/highlight.css">
+<style>
+            body {
+                font-family: -apple-system, BlinkMacSystemFont, 'Segoe WPC', 'Segoe UI', system-ui, 'Ubuntu', 'Droid Sans', sans-serif;
+                font-size: 14px;
+                line-height: 1.6;
+            }
+        </style>
+        <style>
+.task-list-item {
+    list-style-type: none;
+}
+
+.task-list-item-checkbox {
+    margin-left: -20px;
+    vertical-align: middle;
+    pointer-events: none;
+}
+</style>
+        
+    </head>
+    <body class="vscode-body vscode-light">
+        <h2 id="classes-in-python">Classes in Python</h2>
+<ul>
+<li>Class is another type of object that has variables and functions similar to module</li>
+<li>
+<ul>
+<li>Functions in a class are called methods</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>A method takes its class object as the first and default argument</li>
+</ul>
+</li>
+<li>All the types in Python are actually classes</li>
+<li>
+<ul>
+<li>int class, float class, str class, bool class</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>You can see their definitions by typing, for example, help(int)</li>
+</ul>
+</li>
+<li>Class vs. Class object</li>
+<li>
+<ul>
+<li>A class is a blueprint, definition of its attributes and methods(but not real yet)</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>A class object is a class' instance(realization of  a blueprint)</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Example: TESLA model Y</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>TESLA designed model Y's blueprint and produces numerous model Y objects according to the blueprint</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>I can buy a model Y object but not the model Y blueprint</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="object-oriented-programming-principles">Object-oriented Programming Principles</h2>
+<h3 id="encapsulation--contain-related-information-in-an-object">Encapsulation : Contain related information in an object</h3>
+<ul>
+<li>Reduce complexity and increase reusability</li>
+</ul>
+<h3 id="abstraction--expose-only-high-level-interfaces-to-the-outside-world">Abstraction : Expose only high level interfaces to the outside world</h3>
+<ul>
+<li>Reduce complexity and isolate impact of changes</li>
+</ul>
+<h3 id="inheritance--child-classes-inherit-data-and-behaviors-from-parent-class">Inheritance : Child classes inherit data and behaviors from parent class</h3>
+<ul>
+<li>Eliminatee redundant code</li>
+</ul>
+<h3 id="polymorphism--a-single-method-acts-in-a-different-way-depending-on-objects">Polymorphism : A single method acts in a different way depending on objects</h3>
+<ul>
+<li>Escape from complex if/else statements</li>
+</ul>
+<h2 id="pointers-in-c">Pointers in C</h2>
+<ul>
+<li>A pointer variable contains an address of a memory object(e.g., variable)</li>
+<li>
+<ul>
+<li>&lt;type&gt; *&lt;name&gt;</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>int *ptr; -&gt; ptr is a variable that contains an address of an integer variable</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>char *ptr; -&gt; ptr is a variable that contains an address of a character variable</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Address operator &amp; and indirection operator *</li>
+<li>
+<ul>
+<li>int intVariable = 10; //Assume that intVariable's address is 0xEE01</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>int *intPtr;</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>intPtr = &amp;intVariable;</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>Now intPtr contains intVariable's address</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>*intPtr is the value in the memory object that intPtr points to(i.e., intVariable's value, 10)</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>&quot;*intPtr = *intPtr + 2&quot; is the same as &quot;intVariable = intVariable + 2&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>Null pointers - A special case pointer that points to nothing</li>
+<li>
+<ul>
+<li>int *ptr;</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>ptr = NULL; // NULL is a specially defined preprocessor macro that contains a value 0</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>It is useful to initialize a pointer to NULL when it does not point anything yet</li>
+</ul>
+</li>
+<li>Demystifying the syntax</li>
+<li>
+<ul>
+<li>Pointer declaration(e.g., int *ptr;)</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>Declaring a variable ptr that, when the indirection operator * is applied to it, generates a value of type int</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>That is, *ptr is integer type</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Input library function - scanf(&quot;%d&quot;, &amp;input);</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>To change the value of the function argument &quot;input&quot;, scanf must have the address of &quot;input&quot;</li>
+</ul>
+</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>If you omit &amp;, C compliler will kindly give an error message</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h2 id="structures-in-c">Structures in C</h2>
+<ul>
+<li>A convenient way of representing objects that are best repesented by combinarions of the basic data types</li>
+</ul>
+<ul>
+<li>
+<ul>
+<li>Similar to but different from class in that it does not have methods</li>
+</ul>
+</li>
+<li>Definition - a studentType structure comprising 3 members</li>
+<li>
+<blockquote>
+<p>struct studentType{ <br>
+char name[10]; <br>
+int mideterm; <br>
+int final; <br>
+};</p>
+</blockquote>
+</li>
+<li>Consecutive memory allocation</li>
+<li>Typedef to relieve typing burden(typedef &lt;type&gt;&lt;name&gt;)</li>
+<li>
+<blockquote>
+<p>typedef struct studentType Student; \</p>
+<ul>
+<li>now there is a data type Student, which is synonymous with struct studentType</li>
+</ul>
+</blockquote>
+</li>
+<li>Arrays of and pointers for structures?</li>
+</ul>
+<h2 id="stack-vs-heap">Stack vs. Heap</h2>
+<h3 id="stack">Stack</h3>
+<ul>
+<li>Grows upwards</li>
+<li>Allocation and deallocation are automatically done by the compiler</li>
+<li>Local variable access</li>
+<li>Faster and no fragmentation</li>
+</ul>
+<h3 id="heap">Heap</h3>
+<ul>
+<li>Grows downwards</li>
+<li>Allocation and deallocation are manually done by the programmer</li>
+<li>Globla variable access</li>
+<li>Slower and fragmented</li>
+</ul>
+<h3 id="allocation-malloc-function">Allocation: malloc function</h3>
+<ul>
+<li>Parameter : Requested memory size(bytes)</li>
+<li>Reserve a contiguous memory block of the requested size in the heap space</li>
+<li>Return : a pointer jot the reserved block or NULL when failing to reserve the block(lack of memory)</li>
+<li>
+<ul>
+<li>Void pointer(void*) since the proper data type is not known</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>It is safe to check if the return is NULL or not</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>&lt;stdlib.h&gt; needs to be included</li>
+</ul>
+</li>
+<li>Heap grows downwards as more blocks are allocated</li>
+<li>Deallocation : free function</li>
+<li>
+<ul>
+<li>Parameter : The pointer that malloc function returned</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>Once a block is allocated on the heap, the block survives until we explicitly deallocate it</li>
+</ul>
+</li>
+<li>
+<ul>
+<li>
+<ul>
+<li>In contrast to variables in stack that are automatically added and removed</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+        
+        
+    </body>
+    </html>
