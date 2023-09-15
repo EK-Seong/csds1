@@ -1,0 +1,17 @@
+# Introduction
+- Hello C++!
+- Why C++?
+- - popularity : Python >> R > C/C++
+- - We want to be armed with various tools! for various situations
+- Python(R)
+- - Automation : easy -> dynamically typed, memory management // Inefficiency
+- - Interpreted language : line by line to the computer... easy for debugging! // Slow Speed (interpretation each time...)
+- - many libraries
+- - Possible runtime error
+- C/C++
+- - Controllability : can optimize // hard, no garbage collection(?) 쓰레기 알아서 치워라
+- - Compiled language : fast // less flexible -> machine specific compiling 실행 안될 수도
+- Speed matters in Data Science!! And you can encounter situations where your own customized code is needed!
+- You need to read C/C++ code
+- Python(R) for prototyping and C/C++ for speed
+- - See the python code "C++ vs Python.ipynb" for visualization
