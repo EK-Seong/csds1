@@ -6,5 +6,5 @@ int main(){
     int i,n;
     int* p;
 
-    cout << "How many ";
+    cout << "How many numbers would you like";
 }
