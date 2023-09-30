@@ -13,6 +13,9 @@ class undi_graph{
     void visitAction(const int& v);
 
     void bfs(void);
+
+    void dfs(const int& mode); // 여기서는 const int&가 아니어도 되는거 아닌가?
+    void dfs_help(const int& mode, const int& v, vector<bool>& visited);
 };
 
 /* Construct a graph using vertices and edges */
@@ -34,10 +37,56 @@ void undi_graph::visitAction(const int& v){
 }
 
 
-/* visit all vertices in the graph with breadth-first search*/
+/* Visit all vertices in the graph with breadth-first search */
 void undi_graph::bfs(void){
     vector<bool> visited(vNum, false);
+    list<int> q;
+    for (int v = 0; v < vNum; v++){
+        q.push_back(v);
+        int currV;
 
+        while (!q.empty()){
+            currV = q.front();
+            q.pop_front();
+
+            if (!visited[currV]){
+                visited[currV] = true;
+                visitAction(currV);
+
+                for(const int& n : neighbors[currV]){
+                    q.push_back(n);
+                }
+            }
+        }
+    }
+}
+
+/* Visit all vertices in the graph with depth-first search */
+void undi_graph::dfs(const int& mode){
+    vector<bool> visited(vNum,false);
+
+    for(int v = 0; v < vNum; v++){
+        dfs_help(mode, v, visited);
+    }
+}
+
+/* Visit all the vertices that are connected to the input vertex "v" */
+void undi_graph::dfs_help(const int& mode, const int& v, vector<bool>& visited){
+    if (!visited[v]){
+        visited[v] = true;
+        if (mode == 0){
+            visitAction(v);
+        }
+
+        // visit v's neighbors
+        for (const int& n : neighbors[v]){
+            dfs_help(mode,n,visited);
+        }
+
+        if (mode == 1){
+            visitAction(v);
+        }
+    }
 }
 
 int main(void){
