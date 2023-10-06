@@ -15,8 +15,8 @@ int Dummy::n = 0;   // Static members cannot be initialized directly in the clas
 int main(void){
     Dummy a;
     Dummy b[5];
-    cout << a.n << '\n';
-    Dummy* c = new Dummy;
+    cout << a.n << '\n'; // 지금까지 총 6개의 Dummy object를 생성했다
+    Dummy* c = new Dummy; // 이젠 7개
     cout << Dummy::n << endl;
     delete c;
     return 0;
