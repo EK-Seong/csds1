@@ -23,6 +23,6 @@ class LetterCounter{
     unordered_map<char, int> charCountMap; 
 
     public:
-    LetterCounter(const string& text);
+    //LetterCounter(const string& text);
     LetterCounter();
 };
