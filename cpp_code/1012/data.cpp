@@ -34,3 +34,11 @@ uint8_t data::get_label(void){
 }
 
 //uint8_t data::get_enumerated_label(void)
+
+void data::set_distance(double aDist){
+    distance = aDist;
+}
+
+double data::get_distance(void){
+    return distance;
+}

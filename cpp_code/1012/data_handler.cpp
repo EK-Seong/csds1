@@ -109,7 +109,17 @@ void data_handler::split_data(){
 }
 
 void data_handler::count_classes(){
-    num_classes;
+    int count = 0;
+    cout << "array size: " << data_array->size() << endl;
+    for(int i=0;i<data_array->size();i++){
+        if(class_map.find(data_array->at(i)->get_label())==class_map.end()){
+            class_map[data_array->at(i)->get_label()] = count;
+            count ++;
+        }
+    }
+
+    num_classes = count;
+    cout << "Successfully extracted " << num_classes << " unique classes" << endl;
 }
 
 uint32_t data_handler::convert_to_little_endian(const unsigned char* bytes){

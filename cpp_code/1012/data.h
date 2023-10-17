@@ -9,6 +9,8 @@ class data{
     vector<uint8_t>* feature_vector;
     uint8_t label;
 
+    double distance;
+
     public:
     data();
     ~data();
@@ -20,4 +22,7 @@ class data{
     int get_feature_vector_size(void);
     uint8_t get_label(void);
     //uint8_t get_enumerated_label(void);
+
+    void set_distance(double);
+    double get_distance(void);
 };
