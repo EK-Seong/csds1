@@ -23,6 +23,7 @@ int main(){
             knearest->set_k(i);
             performance = knearest->validate_performance();
             best_performance = performance;
+            best_k = i;
         }
         else{
             knearest->set_k(i);

@@ -65,7 +65,7 @@ void data_handler::read_feature_labels(string path){
         }
         cout << "Done getting Input file header." << endl;
         for(int i=0; i < header[1]*0.1; i++){
-            data* d = new data();
+            //data* d = new data();
             char element;
             if(f.read(&element,1)){
                 data_array->at(i)->set_label(static_cast<uint8_t>(element));
@@ -74,7 +74,7 @@ void data_handler::read_feature_labels(string path){
                 cout << "Error Reading from Input file." << endl;
                 exit(1); //???
             }
-            data_array->push_back(d);
+            //data_array->push_back(d);
         }
         cout << "Successfully read and strored " << data_array->size() << " labels" << endl;
     }
