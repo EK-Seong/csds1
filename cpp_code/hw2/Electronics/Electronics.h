@@ -3,29 +3,31 @@
 // Fill in here
 class Electronics{
     private:
-    int size;
+    float size;
 
     protected:
-    double w;
-    int price;
+    float price;
 
     public:
     Electronics();
+    Electronics(float aSize);
 
-    void SetSize(int aSize);
-    int GetSize(void);
+    void SetSize(float aSize);
+    float GetSize(void);
     virtual void PrintSelf(void);
 
     virtual void SetPrice(void);
-    int GetPrice(void);
+    float GetPrice(void);
 };
 
 class TV : public Electronics {
     public:
     TV();
-    TV(int aSize);
+    TV(float aSize);
 
     void PrintSelf(void);
+
+    void SetPrice(void);
 };
 
 class Computer : public Electronics{
@@ -34,47 +36,51 @@ class Computer : public Electronics{
 
     public:
     Computer();
-    Computer(int aSize);
-
-    virtual void SetPrice(void);
+    Computer(float aSize);
 
     virtual void PrintSelf(void);
+
+    virtual void SetPrice(void);
+    virtual void AddGPU(Electronics* aGPU);
 };
 
 class Cellphone : public Electronics{
     public:
     Cellphone();
-    Cellphone(int aSize);
+    Cellphone(float aSize);
 
     void PrintSelf(void);
+
+    void SetPrice(void);
 };
 
 class Laptop : public Computer{
     private:
-    Electronics* GPU1 = nullptr;
+    Electronics* gpu1 = nullptr;
 
     public:
     Laptop();
-    Laptop(int aSize);
+    Laptop(float aSize);
 
     void AddGPU(Electronics* aGPU);
 
+    // PrintSelf는 그대로 가져다 쓴다 Inherit
     void SetPrice(void);
 };
 
 class Desktop : public Computer{
     private:
-    int totalprice;
-    Electronics* GPU1 = nullptr;
-    Electronics* GPU2 = nullptr;
+    float totalprice;
+    Electronics* gpu1 = nullptr;
+    Electronics* gpu2 = nullptr;
 
     public:
     Desktop();
-    Desktop(int aSize);
+    Desktop(float aSize);
 
     void AddGPU(Electronics* aGPU);
 
-    virtual void PrintSelf(void);
+    void PrintSelf(void);
 
     void SetPrice(void);
 };
