@@ -67,6 +67,12 @@ int knn::find_freq_class(void){
         }
     }
 
+/*//
+    for(auto pair : class_freq){
+        cout << pair.first << "\t" << pair.second << "//";
+    }
+    cout << endl;*/
+
     int most_freq = 0;
     int label_nearest;
 
